@@ -2,7 +2,8 @@
 
 ## Overview
 
-This repository contains a JHipster-based microservices project consisting of a Gateway, a BookService microservice, and a JHipster Registry. This README provides detailed instructions for setting up, developing, and testing the project, including how to interact with the BookService API through the Gateway using Postman.
+This repository contains a JHipster-based microservices project consisting of a Gateway, a BookService microservice, and a JHipster Registry. 
+JHipster is a free and open-source application generator used to quickly develop modern web applications and Microservices using Angular or React and the Spring Framework. This README provides detailed instructions for setting up, developing, and testing the project, including how to interact with the BookService API through the Gateway using Postman.
 
 ## Project Structure
 
@@ -12,7 +13,7 @@ This repository contains a JHipster-based microservices project consisting of a 
 
 ## Prerequisites
 
-- **Java Development Kit (JDK)**: Version 11 or later
+- **Java Development Kit (JDK)**: Version 17 or earlier
 - **Maven**: For building and running Java applications
 - **Docker**: For running PostgreSQL in a container
 - **Postman**: For testing API endpoints
