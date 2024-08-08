@@ -6,9 +6,9 @@ This repository contains a JHipster-based microservices project consisting of a 
 
 ## Project Structure
 
-- **JHipster Registry**: Service discovery and configuration management.
-- **Gateway**: Reverse proxy and API gateway.
-- **BookService**: A microservice that provides CRUD operations for managing books.
+- **registry**: Service discovery and configuration management.
+- **gateway**: Reverse proxy and API gateway.
+- **book-service**: A microservice that provides CRUD operations for managing books.
 
 ## Prerequisites
 
@@ -16,6 +16,23 @@ This repository contains a JHipster-based microservices project consisting of a 
 - **Maven**: For building and running Java applications
 - **Docker**: For running PostgreSQL in a container
 - **Postman**: For testing API endpoints
+- **Node.js**: Version 16.0 or later, required for running frontend builds and JHipster CLI
+- **npm**: Comes with Node.js, used for managing JavaScript packages
+- **JHipster**: a development platform to quickly generate, develop, and deploy modern web applications + microservice architectures
+
+### Installing JHipster
+
+To install JHipster, run the following command:
+
+```bash
+npm install -g generator-jhipster
+```
+
+This will globally install the JHipster generator, allowing you to create JHipster projects using the command:
+
+```bash
+jhipster
+```
 
 ## Setup
 
@@ -24,6 +41,8 @@ This repository contains a JHipster-based microservices project consisting of a 
 #### JHipster Registry
 
 ```bash
+mkdir registry
+cd registry
 git clone https://github.com/jhipster/jhipster-registry.git
 cd jhipster-registry
 ```
@@ -34,9 +53,19 @@ cd jhipster-registry
 jhipster
 ```
 
-- Select **Microservices Gateway**
-- Choose other options as prompted
-- Set the server port to `8088` in `application-dev.yml`
+During the prompts, select the following options:
+- **What type of application would you like to create?**: Gateway application
+- **What is your default Java package name**: // your choice
+- **Would you like to use Maven or Gradle for building the backend**: Maven
+- **As you are running a microservices architecture, on which port would you like your server to run? It should be unique to avoid port conflict**: 8088
+- **Which service discovery server do you want to use**: JHipster Registry (legacy, uses Eureka, provides Spring Cloud Config support)
+- **Which type of authentication would you like to use?**: JWT authentication (stateless, with a token)
+- **Which tyoe of database would you like to use**: No database
+- **Development Database**: No database
+- **Production Database**: No database
+- **Which framework would you like to use for the client?** No client
+- **Other options**: Select according to your preference.
+
 
 #### BookService Microservice
 
@@ -44,21 +73,30 @@ jhipster
 jhipster
 ```
 
-- Select **Microservice application**
-- Choose PostgreSQL for both production and development databases
-- Set the server port to `8099` in `application-dev.yml`
-- Generate Docker configuration for PostgreSQL in `src/main/docker/postgresql.yml`
+During the prompts, select the following options:
+- **What type of application would you like to create?**: Microservice application
+- **What is your default Java package name**: // your choice
+- **Would you like to use Maven or Gradle for building the backend**: Maven
+- **Do you want to make it reactive with Spring WebFlux?** No
+- **As you are running a microservices architecture, on which port would you like your server to run? It should be unique to avoid port conflict**: 8099
+- **Which service discovery server do you want to use**: JHipster Registry (legacy, uses Eureka, provides Spring Cloud Config support)
+- **Which type of authentication would you like to use?**: JWT authentication (stateless, with a token)
+- **Do you want to generate a feign client?** // your choice
+- **Which tyoe of database would you like to use**: SQL
+- **Production Database**: Postgres
+- **Development Database**: Postgres
+- **Which framework would you like to use for the client?** No client
+- **Other options**: Select according to your preference.
 
 ### 2. Build and Run JHipster Registry
 
 ```bash
-./mvnw package
 ./mvnw
 ```
 
 ### 3. Configure PostgreSQL
 
-Run the PostgreSQL container:
+Launch your Docker desktop app, then run and start the PostgreSQL container:
 
 ```bash
 docker-compose -f src/main/docker/postgresql.yml up -d
@@ -80,32 +118,36 @@ jhipster entity Book
 
 Define the following fields:
 
-- `id`: Long, auto-generated
 - `title`: String, not null, unique
 - `authorName`: String, not null
 - `isbn`: String
 - `archived`: Boolean
 - `shareable`: Boolean, not null
 
-### 2. Implement the Book Resource
+Select the following prompts as it fits your preference.
+At the end, JHipster will generate the entity, relationship (if any, none in this case), repository, service, and resource (REST API controller), DTO, tests etc.
+
+### 2. Implement the Book Resource (generated)
 
 The `BookResource` class provides CRUD operations for the `Book` entity.
 
 ## Running the Applications
 
-### 1. Start the JHipster Registry
+### 1. Make sure the JHipster Registry is running
 
+Remember, we achieved this using the command:
 ```bash
 ./mvnw
 ```
 
 ### 2. Run the Gateway Application
 
-Open the Gateway project in IntelliJ and start it.
+Open the Gateway project in IntelliJ (or any preferred IDE) and run it.
+Remember, the gateway and microservice apps use no front end framework (no client) so running them from the IDE (main) will only start the backend.
 
 ### 3. Run the BookService Microservice
 
-Open the BookService project in IntelliJ and start it.
+Open the BookService project in IntelliJ and start it the application like we did the gateway app
 
 ## Testing the API with Postman
 
@@ -134,6 +176,8 @@ Open the BookService project in IntelliJ and start it.
 ```
 
 ### **2. Create a New Book**
+
+NOTE: the book microservice is accessed from the gateway through `/services/bookservice/**`
 
 **Method**: POST  
 **URL**: `http://localhost:8088/services/bookservice/api/books`  
