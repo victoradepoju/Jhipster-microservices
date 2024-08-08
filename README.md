@@ -142,11 +142,13 @@ Remember, we achieved this using the command:
 
 ### 2. Run the Gateway Application
 
+First, make sure you set the Active Profile to **dev** in the configuration.
 Open the Gateway project in IntelliJ (or any preferred IDE) and run it.
 Remember, the gateway and microservice apps use no front end framework (no client) so running them from the IDE (main) will only start the backend.
 
 ### 3. Run the BookService Microservice
 
+Again, don't forget to set Active Profile to **dev**
 Open the BookService project in IntelliJ and start it the application like we did the gateway app
 
 ## Testing the API with Postman
