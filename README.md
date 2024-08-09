@@ -53,6 +53,8 @@ cd jhipster-registry
 #### Gateway Application
 
 ```bash
+mkdir gateway
+cd gateway
 jhipster
 ```
 
@@ -73,6 +75,8 @@ During the prompts, select the following options:
 #### BookService Microservice
 
 ```bash
+mkdir book-service
+cd book-service
 jhipster
 ```
 
