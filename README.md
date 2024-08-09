@@ -177,7 +177,7 @@ Upon successful running, you should have:
 
 ![Screenshot (240)](https://github.com/user-attachments/assets/2598286c-233a-4be1-ad8b-f0d31a28d9b1)
 
-Check to registry home page again and notice that it has included the Gateway as one of the registered instances:
+Check the registry home page again and notice that it has included the Gateway as one of the registered instances:
 
 ![Screenshot (241)](https://github.com/user-attachments/assets/88634836-a65e-471e-9224-5a4047e3ee69)
 
