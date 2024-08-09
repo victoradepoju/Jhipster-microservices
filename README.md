@@ -97,7 +97,7 @@ During the prompts, select the following options:
 ./mvnw
 ```
 
-You should have something similar to the image below:
+After running, you should have something similar to the image below:
 
 ![Screenshot (234)](https://github.com/user-attachments/assets/ff3b3b1c-b09f-4607-827b-acf3824754a0)
 
@@ -108,6 +108,9 @@ Launch your Docker desktop app, then run and start the PostgreSQL container:
 ```bash
 docker-compose -f src/main/docker/postgresql.yml up -d
 ```
+From IntelliJ you can also achieve this by clicking the green run button beside the 'postgresql' as shown below:
+
+![Screenshot (233)](https://github.com/user-attachments/assets/8d19c862-e6ba-4574-8a3f-a7da05d98603)
 
 ### 4. Synchronize JWT Secrets
 
@@ -147,16 +150,51 @@ Remember, we achieved this using the command:
 ./mvnw
 ```
 
+Open http://localhost:8761 on your browser of choice and you should be redirected to the login page. The default username and password is **admin**::
+
+![Screenshot (235)](https://github.com/user-attachments/assets/a5bcbce3-3897-49ff-93dc-862827d7f3ab)
+
+The interface of the home page is shown below. Notice that the Instances Register is empty.
+
+![Screenshot (236)](https://github.com/user-attachments/assets/d3aae2fe-6ecb-4811-8c13-eb9624c32770)
+
 ### 2. Run the Gateway Application
 
 First, make sure you set the Active Profile to **dev** in the configuration.
+
+![Screenshot (238)](https://github.com/user-attachments/assets/bc3b1582-05a6-4b06-96c3-a503b8e3b4aa)
+
 Open the Gateway project in IntelliJ (or any preferred IDE) and run it.
 Remember, the gateway and microservice apps use no front end framework (no client) so running them from the IDE (main) will only start the backend.
 
+![Screenshot (239)](https://github.com/user-attachments/assets/ea465bfd-2568-4450-8330-7a25f3a95877)
+
+Upon successful running, you should have:
+
+![Screenshot (240)](https://github.com/user-attachments/assets/2598286c-233a-4be1-ad8b-f0d31a28d9b1)
+
+Check to registry home page again and notice that it has included the Gateway as one of the registered instances:
+
+![Screenshot (241)](https://github.com/user-attachments/assets/88634836-a65e-471e-9224-5a4047e3ee69)
+
 ### 3. Run the BookService Microservice
+
+Make sure the docker container we created earlier is still running:
+
+![Screenshot (242)](https://github.com/user-attachments/assets/edad4e8f-6be5-4573-b652-afe151f11da1)
 
 Again, don't forget to set Active Profile to **dev**
 Open the BookService project in IntelliJ and start it the application like we did the gateway app
+
+At the end, you should have:
+
+![Screenshot (243)](https://github.com/user-attachments/assets/e2b12442-fc6b-4f22-91f4-9436fbcac306)
+
+Notice that you now have 2 instances registered in the registry:
+
+![Screenshot (244)](https://github.com/user-attachments/assets/ec4d3078-2b6e-4fc8-8d84-9ae9c1246a0c)
+
+Pretty cool, right?
 
 ## Testing the API with Postman
 
