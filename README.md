@@ -3,7 +3,7 @@
 ## Overview
 
 This repository contains a JHipster-based microservices project consisting of a Gateway, a BookService microservice, and a JHipster Registry. 
-JHipster is a free and open-source application generator used to quickly develop modern web applications and Microservices using Angular or React and the Spring Framework. This README provides detailed instructions for setting up, developing, and testing the project, including how to interact with the BookService API through the Gateway using Postman.
+JHipster is a free and open-source application generator used to quickly develop modern web applications and Microservices using Angular or React and the Spring Framework. This README provides detailed instructions for setting up, developing, and testing the project, including how to interact with the BookService API through the Gateway using Postman (or Insomnia).
 
 ## Project Structure
 
