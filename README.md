@@ -98,7 +98,8 @@ During the prompts, select the following options:
 ```
 
 You should have something similar to the image below:
-![Screenshot (233)](https://github.com/user-attachments/assets/8d19c862-e6ba-4574-8a3f-a7da05d98603)
+
+![Screenshot (234)](https://github.com/user-attachments/assets/ff3b3b1c-b09f-4607-827b-acf3824754a0)
 
 ### 3. Configure PostgreSQL
 
