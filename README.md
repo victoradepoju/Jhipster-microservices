@@ -108,7 +108,7 @@ Launch your Docker desktop app, then run and start the PostgreSQL container:
 ```bash
 docker-compose -f src/main/docker/postgresql.yml up -d
 ```
-From IntelliJ you can also achieve this by clicking the green run button beside the 'postgresql' as shown below:
+From IntelliJ, you can achieve this by clicking the green run button beside the 'postgresql' as shown below:
 
 ![Screenshot (233)](https://github.com/user-attachments/assets/8d19c862-e6ba-4574-8a3f-a7da05d98603)
 
@@ -150,11 +150,11 @@ Remember, we achieved this using the command:
 ./mvnw
 ```
 
-Open http://localhost:8761 on your browser of choice and you should be redirected to the login page. The default username and password is **admin**::
+Open http://localhost:8761 on your browser of choice and you should be redirected to the sign in page. The default username and password is **admin**:
 
 ![Screenshot (235)](https://github.com/user-attachments/assets/a5bcbce3-3897-49ff-93dc-862827d7f3ab)
 
-The interface of the home page is shown below. Notice that the Instances Register is empty.
+After signing in, the interface of the home page is shown below. Notice that the Instances Register is empty.
 
 ![Screenshot (236)](https://github.com/user-attachments/assets/d3aae2fe-6ecb-4811-8c13-eb9624c32770)
 
@@ -183,7 +183,7 @@ Make sure the docker container we created earlier is still running:
 
 ![Screenshot (242)](https://github.com/user-attachments/assets/edad4e8f-6be5-4573-b652-afe151f11da1)
 
-Again, don't forget to set Active Profile to **dev**
+Again, don't forget to set Active Profile to **dev**.
 Open the BookService project in IntelliJ and start it the application like we did the gateway app
 
 At the end, you should have:
