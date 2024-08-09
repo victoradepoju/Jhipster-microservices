@@ -286,6 +286,7 @@ NOTE: the book microservice is accessed from the gateway through `/services/book
 **Body** (JSON):
 ```json
 {
+  "id": 1,
   "isbn": "1111111111",
   "archived": true
 }
