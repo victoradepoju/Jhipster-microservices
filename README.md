@@ -35,6 +35,8 @@ This will globally install the JHipster generator, allowing you to create JHipst
 jhipster
 ```
 
+For a more detailed breakdown of the installation process, (here)[https://www.jhipster.tech/installation/] is a link to the official JHipster page on how to install JHipster and it's prerequisites.
+
 ## Setup
 
 ### 1. Clone the Repositories
