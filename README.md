@@ -97,6 +97,9 @@ During the prompts, select the following options:
 ./mvnw
 ```
 
+You should have something similar to the image below:
+![Screenshot (233)](https://github.com/user-attachments/assets/8d19c862-e6ba-4574-8a3f-a7da05d98603)
+
 ### 3. Configure PostgreSQL
 
 Launch your Docker desktop app, then run and start the PostgreSQL container:
